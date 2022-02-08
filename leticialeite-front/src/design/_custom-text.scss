@@ -1,0 +1,22 @@
+.custom__text {
+    color: $main-grey-green;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+.custom__text__title{
+  @extend .custom__text;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.custom__text__small{
+  color: $main-white;
+  letter-spacing: 2px;
+  font-weight: lighter;
+}
+
+.custom__text__small__bold{
+  @extend .custom__text__small;
+  font-weight: bold;
+}

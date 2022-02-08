@@ -1,0 +1,23 @@
+.custom__btn {
+    &:hover {
+      border: 1px solid #ffffff;
+      transition: 0.2s all;
+      transition-delay: 0.2s;
+    }
+    font-weight: bold;
+    text-transform: capitalize;
+    box-shadow: none !important;
+    border-radius: 0;
+    letter-spacing: 5px;
+}
+
+.custom__btn__pink{
+  @extend .custom__btn;
+  color: $main-white;
+  background-color: $main-pastel-pink !important;
+}
+
+.custom__btn__large {
+  padding: 1.5rem 3.5rem 1.5rem 3.5rem !important;
+  font-size: 1rem;
+}
