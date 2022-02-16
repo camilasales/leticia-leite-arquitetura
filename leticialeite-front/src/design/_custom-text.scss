@@ -4,6 +4,13 @@
     font-size: 1.2rem;
 }
 
+.custom__text__medium{
+  @extend .custom__text;
+  color: $main-white;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
 .custom__text__title{
   @extend .custom__text;
   font-size: 3rem;
