@@ -12,6 +12,9 @@
 import Vue from "vue";
 import mainMenu from './components/mainMenu.vue'
 import mainFooter from './components/mainFooter.vue'
+import ScrollAnimation from './directives/scroll-animation.js'
+
+Vue.directive('scrollanimation', ScrollAnimation);
 
 export default Vue.extend({
   name: "App",
@@ -33,5 +36,14 @@ $body-font-family: 'Dosis';
   font-family: 'Dosis', sans-serif;
   margin: 0;
   padding: 0;
+}
+.before-enter{
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease-out;
+}
+.enter{
+  opacity: 1;
+  transform: translateY(0px);
 }
 </style>

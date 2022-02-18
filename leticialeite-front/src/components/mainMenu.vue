@@ -6,17 +6,22 @@
         elevate-on-scroll
         class="menu"
       >
-        <v-row no-gutters class="menu__items">
+        <v-row no-gutters class="menu__items" v-if="$vuetify.breakpoint.mdAndUp">
           <v-col cols="2" class="menu__logo">
             <img src="../assets/logo.png">
           </v-col>
-          <v-col :cols="$vuetify.breakpoint.mdAndDown ? '9' : '12'" :class="$vuetify.breakpoint.mdAndDown ? 'text-end' : 'text-center'" v-if="$vuetify.breakpoint.mdAndUp">
+          <v-col :cols="$vuetify.breakpoint.mdAndDown ? '9' : '12'" :class="$vuetify.breakpoint.mdAndDown ? 'text-end' : 'text-center'">
             <a class="menu__items__nav" @click="changePage('/')">INICIO</a>
             <a class="menu__items__nav" @click="changePage('projetos')">PROJETOS</a>
             <a class="menu__items__nav" @click="changePage('sobre')">SOBRE</a>
             <a class="menu__items__nav" @click="changePage('projetos')">CONTATO</a>
           </v-col>
-          <v-col class="text-end" v-else>
+        </v-row>
+        <v-row no-gutters class="menu__items" v-else>
+          <v-col cols="2" class="menu__logo">
+            <img src="../assets/icons/logo.png">
+          </v-col>
+          <v-col class="text-end">
             <v-app-bar-nav-icon @click="dialog = true" color="#ffffff"></v-app-bar-nav-icon>
           </v-col>
         </v-row>
