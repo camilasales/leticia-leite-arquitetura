@@ -40,7 +40,7 @@ export default {
 @import './src/design';
 .about{
   display: grid;
-  grid-template-rows: 130vh;
+  grid-template-rows: 50rem;
   grid-template-columns: 50vw 50vw;
 }
 .about__text{

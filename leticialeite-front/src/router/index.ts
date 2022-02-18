@@ -25,6 +25,12 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import("../views/About.vue"),
   },
+  {
+    path: "/contato",
+    name: "Contact",
+    component: () =>
+      import("../views/Contact.vue"),
+  },
 ];
 
 const router = new VueRouter({

@@ -14,7 +14,7 @@
             <a class="menu__items__nav" @click="changePage('/')">INICIO</a>
             <a class="menu__items__nav" @click="changePage('projetos')">PROJETOS</a>
             <a class="menu__items__nav" @click="changePage('sobre')">SOBRE</a>
-            <a class="menu__items__nav" @click="changePage('projetos')">CONTATO</a>
+            <a class="menu__items__nav" @click="changePage('contato')">CONTATO</a>
           </v-col>
         </v-row>
         <v-row no-gutters class="menu__items" v-else>
@@ -46,7 +46,7 @@
             <a class="menu__items__dialog" @click="changePage('/')">INICIO</a>
             <a class="menu__items__dialog" @click="changePage('projetos')">PROJETOS</a>
             <a class="menu__items__dialog" @click="changePage('sobre')">SOBRE</a>
-            <a class="menu__items__dialog" @click="changePage('projetos')">CONTATO</a>
+            <a class="menu__items__dialog" @click="changePage('contato')">CONTATO</a>
           </v-card-text>
         </v-card>
       </v-dialog>

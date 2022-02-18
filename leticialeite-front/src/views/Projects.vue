@@ -10,7 +10,7 @@
             class="project__grid__item"
           >
             <div>
-              <span v-scrollanimation class="mt-16 custom__text__medium">{{project.name}}</span>
+              <span class="mt-16 custom__text__medium">{{project.name}}</span>
             </div>
             <div class="project__grid__item__text">
               <span class="custom__text__small">LETICIA LEITE ARQUITETURA</span>
