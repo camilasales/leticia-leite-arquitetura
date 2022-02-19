@@ -24,7 +24,7 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-  name: "Projetos",
+  name: "Projects",
   data() {
     return {
       

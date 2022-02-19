@@ -1,83 +1,91 @@
 <template>
-  <div class="mt-8">
+  <div class="contact__grid">
     <v-row class="contact__form">
-        <v-form ref="form">
-          <v-col cols="12">
+      <v-col cols="12" class="text-center">
+        <h2 class="custom__text__subtitle">ENVIE SUA MENSAGEM</h2>
+      </v-col>
+      <v-form ref="form" class="elevation-4">
+        <v-row :no-gutters="$vuetify.breakpoint.mdAndUp ? false : true">
+          <v-col sm="12" md="6" lg="6" cols="12">
+            <span>Nome:*</span>
             <v-text-field
               v-model="data.name"
               color="#494949"
-              label="Nome completo"
+              outlined
               required
               :rules="rules.nameRules"
               validate-on-blur
             />
           </v-col>
-          <v-col cols="12">
+          <v-col sm="12" md="6" lg="6" cols="12">
+            <span>Telefone ou Celular:</span>
+            <v-text-field
+              v-model="data.phone"
+              v-mask="['(##) #####-####', '(##) ####-####']"
+              v-masked="false"
+              color="#494949"
+              outlined
+            />
+          </v-col>
+        </v-row>
+        <v-row :no-gutters="$vuetify.breakpoint.mdAndUp ? false : true">
+          <v-col sm="12" md="6" lg="6" cols="12">
+            <span>E-mail:*</span>
             <v-text-field
               color="#494949"
-              label="E-mail"
+              outlined
               required
               v-model="data.email"
               :rules="rules.emailRules"
               validate-on-blur
             />
           </v-col>
-          <div class="d-flex flex-row">
-            <v-col cols="6">
-              <v-text-field
-                v-model="data.phone"
-                v-mask="['(##) #####-####', '(##) ####-####']"
-                v-masked="false"
-                color="#494949"
-                label="Telefone ou Celular"
-                required
-                :rules="rules.phoneRules"
-                validate-on-blur
-              />
-            </v-col>
-            <v-col cols="6">
-              <v-text-field
-                v-model="data.about"
-                color="#494949"
-                label="Assunto"
-                required
-                :rules="rules.aboutRules"
-                validate-on-blur
-              />
-            </v-col>
-          </div>
-          <v-col cols="12">
-            <v-textarea
-              v-model="data.communication"
-              label="Mensagem"
+          <v-col sm="12" md="6" lg="6" cols="12">
+            <span>Assunto:*</span>
+            <v-text-field
+              v-model="data.about"
               color="#494949"
-              :rules="rules.communicationRules"
+              outlined
+              required
+              :rules="rules.aboutRules"
               validate-on-blur
             />
           </v-col>
-          <v-alert
+        </v-row>
+        <v-col cols="12" class="px-0">
+          <span>Mensagem:*</span>
+          <v-textarea
+            v-model="data.communication"
             outlined
-            type="success"
+            color="#494949"
+            :rules="rules.communicationRules"
+            validate-on-blur
+          />
+        </v-col>
+        <v-alert
+          outlined
+          type="success"
+          text
+          v-if="alert"
+        >
+          Sua mensagem foi enviada :)
+        </v-alert>
+        <v-col
+          cols="12"
+          align="start"
+          class="ma-0 pa-0"
+        >
+          <v-btn
+            :block="$vuetify.breakpoint.mdAndUp ? false : true"
+            :loading="loading"
+            class="custom__btn__pink custom__btn__large"
             text
-            v-if="alert"
+            @click="sendMessage()"
           >
-            Sua mensagem foi enviada :)
-          </v-alert>
-          <v-col
-            cols="12"
-            align="center"
-          >
-            <v-btn
-              :loading="loading"
-              class="btnSend"
-              text
-              color="#494949"
-              @click="sendMessage()"
-            >
-              ENVIAR
-            </v-btn>
-          </v-col>
-        </v-form>
+            ENVIAR
+          </v-btn>
+        </v-col>
+      </v-form>
     </v-row>
   </div>
 </template>
@@ -85,6 +93,7 @@
 <script>
 import { mask, masked } from 'vue-the-mask'
 export default {
+  name: "Contact",
   directives: {
     mask,
     masked,
@@ -151,34 +160,36 @@ export default {
   },
 };
 </script>
-
-<style scoped>
+<style lang="scss" scoped>
+@import './src/design';
+.contact__grid {
+  display: grid;
+  grid-template-rows: 55rem 5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 .contact__form{
-  width: 100%;
   height: 50rem;
-  object-fit: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-span{
-  color: #ffffff;
-  letter-spacing: 2px; 
-  font-size: 20px;
+.contact__form > :last-child{
+  width: 50vw;
+  padding: 50px;
+  justify-content: center;
 }
-p{
-  letter-spacing: 2px; 
-  font-size: 20px;
-}
-.btnSend{
-  letter-spacing: 2px; 
-  font-size: 15px;
-  font-weight: bold;
-}
-@media screen and (max-width: 600px){
-  span{
-    letter-spacing: 0px; 
-    font-size: 15px;
+@media screen and (max-width: 1096px){
+  .contact__grid {
+    grid-template-rows: 65rem 5rem;
+  }
+  .contact__form{
+    height: 60rem;
+  }
+  .contact__form > :last-child{
+    width: 90vw;
+    padding: 25px;
   }
 }
 </style>

@@ -16,6 +16,11 @@
   font-size: 3rem;
   font-weight: 500;
 }
+.custom__text__subtitle{
+  @extend .custom__text;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
 
 .custom__text__small{
   color: $main-white;
