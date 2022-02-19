@@ -52,11 +52,12 @@
             />
           </v-col>
         </v-row>
-        <v-col cols="12" class="px-0">
+        <v-col fluid>
           <span>Mensagem:*</span>
           <v-textarea
             v-model="data.communication"
             outlined
+            no-resize
             color="#494949"
             :rules="rules.communicationRules"
             validate-on-blur
