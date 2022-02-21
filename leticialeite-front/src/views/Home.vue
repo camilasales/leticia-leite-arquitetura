@@ -18,7 +18,7 @@
           Etiam fringilla elit sagittis sagittis feugiat viverra volutpat sit. Odio 
           ultrices donec volutpat id. Quis pulvinar proin eget ut ultricies lacus.
         </p>
-        <v-btn class="custom__btn__pink custom__btn__large" v-scrollanimation>CONHECER</v-btn>
+        <v-btn class="custom__btn__pink custom__btn__large" @click="goToProjects()" v-scrollanimation>CONHECER</v-btn>
       </v-col>
       <v-col cols="12" class="d-flex justify-center align-center">
         <hr class="line" v-scrollanimation>
@@ -29,6 +29,11 @@
 <script>
 export default {
   name: "Home",
+  methods:{
+   goToProjects(){
+    this.$router.push('/projetos');
+   }
+  }
 }
 </script>
 <style lang="scss" scoped>

@@ -17,7 +17,7 @@
           ultrices donec volutpat id. Quis pulvinar proin eget ut ultricies lacus.
         </p>
       </v-col>
-      <v-col>
+      <v-col v-scrollanimation>
         <v-img src="../assets/img/le.jpeg" class="about__item"></v-img>
       </v-col>
       <!-- <figure class="about__item">

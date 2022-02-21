@@ -1,23 +1,21 @@
 <template>
   <div class="my-10 mx-2 project__grid">
     <v-row no-gutters v-for="(project, key) in projects" :key="key" >
-        <v-img
-          :src="project.src"
-          class="project__grid__img"
-          v-scrollanimation
-        >
-          <div
-            class="project__grid__item"
-          >
-            <div>
-              <span class="mt-16 custom__text__medium">{{project.name}}</span>
-            </div>
-            <div class="project__grid__item__text">
-              <span class="custom__text__small">LETICIA LEITE ARQUITETURA</span>
-              <img src="../assets/icons/logo.png">
-            </div>
+      <v-img
+        :src="project.src"
+        class="project__grid__img"
+        v-scrollanimation
+      >
+        <div class="project__grid__item">
+          <div>
+            <span class="mt-16 custom__text__medium">{{project.name}}</span>
           </div>
-        </v-img>
+          <div class="project__grid__item__text">
+            <span class="custom__text__small">LETICIA LEITE ARQUITETURA</span>
+            <img src="../assets/icons/logo.png">
+          </div>
+        </div>
+      </v-img>
     </v-row>
   </div>
 </template>

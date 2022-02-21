@@ -1,7 +1,7 @@
 <template>
   <div class="contact__grid">
-    <v-row class="contact__form">
-      <v-col cols="12" class="text-center">
+    <v-row class="contact__form" v-scrollanimation>
+      <v-col cols="12" class="text-center" >
         <h2 class="custom__text__subtitle">ENVIE SUA MENSAGEM</h2>
       </v-col>
       <v-form ref="form" class="elevation-4">
@@ -52,12 +52,11 @@
             />
           </v-col>
         </v-row>
-        <v-col fluid>
+        <v-col cols="12" class="px-0">
           <span>Mensagem:*</span>
           <v-textarea
             v-model="data.communication"
             outlined
-            no-resize
             color="#494949"
             :rules="rules.communicationRules"
             validate-on-blur
