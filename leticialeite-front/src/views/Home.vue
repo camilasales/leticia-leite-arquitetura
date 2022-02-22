@@ -31,7 +31,7 @@ export default {
   name: "Home",
   methods:{
    goToProjects(){
-    this.$router.push('/projetos');
+    this.$router.push('/projetos/detalhes');
    }
   }
 }

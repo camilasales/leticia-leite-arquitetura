@@ -11,10 +11,10 @@
             <img src="../assets/logo.png">
           </v-col>
           <v-col :cols="$vuetify.breakpoint.mdAndDown ? '9' : '12'" :class="$vuetify.breakpoint.mdAndDown ? 'text-end' : 'text-center'">
-            <a class="menu__items__nav" @click="changePage('/')">INICIO</a>
-            <a class="menu__items__nav" @click="changePage('projetos')">PROJETOS</a>
-            <a class="menu__items__nav" @click="changePage('sobre')">SOBRE</a>
-            <a class="menu__items__nav" @click="changePage('contato')">CONTATO</a>
+            <a class="menu__items__nav" @click="changePage('Home')">INICIO</a>
+            <a class="menu__items__nav" @click="changePage('Projects')">PROJETOS</a>
+            <a class="menu__items__nav" @click="changePage('About')">SOBRE</a>
+            <a class="menu__items__nav" @click="changePage('Contact')">CONTATO</a>
           </v-col>
         </v-row>
         <v-row no-gutters class="menu__items" v-else>
@@ -43,10 +43,10 @@
             </div>
           </v-card-title>
           <v-card-text class="d-flex flex-column align-center justify-center">
-            <a class="menu__items__dialog" @click="changePage('/')">INICIO</a>
-            <a class="menu__items__dialog" @click="changePage('projetos')">PROJETOS</a>
-            <a class="menu__items__dialog" @click="changePage('sobre')">SOBRE</a>
-            <a class="menu__items__dialog" @click="changePage('contato')">CONTATO</a>
+            <a class="menu__items__dialog" @click="changePage('Home')">INICIO</a>
+            <a class="menu__items__dialog" @click="changePage('Projects')">PROJETOS</a>
+            <a class="menu__items__dialog" @click="changePage('About')">SOBRE</a>
+            <a class="menu__items__dialog" @click="changePage('Contact')">CONTATO</a>
           </v-card-text>
         </v-card>
       </v-dialog>
@@ -64,7 +64,7 @@ export default {
     changePage(routerName) {
       this.$router
         .push({
-          path: routerName,
+          name: routerName
         })
         .catch(() => {});
       this.dialog = false;

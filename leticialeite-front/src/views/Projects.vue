@@ -5,6 +5,7 @@
         :src="project.src"
         class="project__grid__img"
         v-scrollanimation
+        @click="goToProjects()"
       >
         <div class="project__grid__item">
           <div>
@@ -32,6 +33,11 @@ export default {
     ...mapGetters({
       projects: "projects/listProjects",
     }),
+  },
+  methods:{
+      goToProjects(){
+          this.$router.push({name: 'details'});
+      }
   },
   mounted() {
     this.$store.dispatch("projects/getAllProjects");

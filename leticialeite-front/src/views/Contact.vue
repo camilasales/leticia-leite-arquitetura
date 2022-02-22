@@ -57,6 +57,7 @@
           <v-textarea
             v-model="data.communication"
             outlined
+            no-resize
             color="#494949"
             :rules="rules.communicationRules"
             validate-on-blur
